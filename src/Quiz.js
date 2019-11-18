@@ -15,11 +15,18 @@ class Quiz extends Component {
     });
   }
 
+  handleResetClick() {
+    this.SetState(state => {
+      return { quiz_position: (quiz_position = 1) };
+    });
+    return this.props.resetClickHandler();
+  }
+
   render() {
     const isQuizEnd =
       this.state.quiz_position - 1 === quizData.quiz_questions.length;
     if (isQuizEnd === true) {
-      return <QuizEnd />;
+      return <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} />;
     } else {
       return (
         <div>
