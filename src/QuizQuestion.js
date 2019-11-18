@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import QuizQuestionButton from "./QuizQuestionButton";
 
 class QuizQuestion extends Component {
+  handleClick = buttonText => {};
+
   render() {
     return (
       <main>
@@ -26,8 +28,6 @@ class QuizQuestion extends Component {
       </main>
     );
   }
-
-  handleClick = buttonText => {};
 }
 
 export default QuizQuestion;
