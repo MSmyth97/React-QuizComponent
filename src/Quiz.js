@@ -5,6 +5,10 @@ import QuizEnd from "./QuizEnd";
 let quizData = require("./quiz_data.json");
 
 class Quiz extends Component {
+  showNextQuestion() {
+    this.setState((quiz_position += 1));
+  }
+
   constructor(props) {
     super(props);
     this.state = { quiz_position: 1 };
@@ -27,9 +31,6 @@ class Quiz extends Component {
       );
     }
   }
-  showNextQuestion = () => {
-    this.setState((quiz_position += 1));
-  };
 }
 
 export default Quiz;
